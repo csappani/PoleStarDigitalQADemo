@@ -1,0 +1,72 @@
+[
+  {
+    id: 7422295,
+    name: 'chiran',
+    email: '103400434101423410210233@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422294,
+    name: 'chiran',
+    email: '114233002314430221412302@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422293,
+    name: 'chiran',
+    email: '42431230343014444134243@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422292,
+    name: 'chiran',
+    email: '114203333321403404411033@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422291,
+    name: 'chiran',
+    email: '42043000104434420020343@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422290,
+    name: 'chiran',
+    email: '101420203302030134330442@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422289,
+    name: 'chiran',
+    email: '11330410012404143133203@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422288,
+    name: 'chiran',
+    email: '220044422040201101124@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422287,
+    name: 'chiran',
+    email: '22334200431021121311031@gmail.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7422245,
+    name: 'scott-modifyName',
+    email: '30200021333324222113101@gmail.com',
+    gender: 'female',
+    status: 'inactive'
+  }
+]
