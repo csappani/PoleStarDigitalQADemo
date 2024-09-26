@@ -73,7 +73,12 @@ test("Update User details with invalid UserId", async({request})=>{
             headers: {
                 "Accept": "application/json",
                 "authorization": "Bearer "+authToken
-            }
+            },
+            data: {
+                "name": "scott-modifyName",
+                "gender": "female",
+                "status": "inactive"
+            },
         }
     );
     console.log(await response.json())

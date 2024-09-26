@@ -15,7 +15,9 @@ test("Get Users", async({request})=>{
 );
     console.log(await response.json())
     expect(response.status()).toBe(200)
-    
+    let jsonArrayDataRes = await response.json();
+    userId = jsonArrayDataRes[0].id;
+    console.log("UserId:"+userId);   
 })
 
 test("Get Users with invalid url", async({request})=>{
@@ -34,7 +36,7 @@ test("Get Users with invalid url", async({request})=>{
 
 test("Get Users with invalid id", async({request})=>{
 
-    const response = await request.get("https://gorest.co.in/public/v2/users"+"/123",
+    const response = await request.get("https://gorest.co.in/public/v2/users/"+"123",
     {
         headers: {
             "Accept": "application/json",
@@ -44,8 +46,7 @@ test("Get Users with invalid id", async({request})=>{
 );
     expect(response.status()).toBe(404)
     console.log(await response.json())
-    // expect(response.body.message).to.eq('Resource not found')
-    
+    // expect(response.body.message).to.eq('Resource not found')  
 })
 
 test("Get Users with invalid authToken", async({request})=>{
@@ -63,62 +64,16 @@ test("Get Users with invalid authToken", async({request})=>{
     
 })
 
-test("Create User", async({request})=>{
+test("Get Users with valid UserId", async({request})=>{
 
-    const response=await request.post('https://gorest.co.in/public/v2/users',
-        {
-            data: {
-                "name": "chiran",
-                "gender": "male",
-                "email": Math.random().toString(5).substring(2) + "@gmail.com",
-                "status": "active"
-            },
-            headers: {
-                "Accept": "application/json",
-                "authorization": "Bearer "+authToken
-            }
+    const response = await request.get("https://gorest.co.in/public/v2/users/"+userId,
+    {
+        headers: {
+            "Accept": "application/json",
+            "authorization": "Bearer "+authToken
         }
-    );
-    console.log(await response.json())
-    expect(response.status()).toBe(201)
-    var res=await response.json()
-    userId=res.id;
-    console.log("userID:"+userId)
-})
-
-test("Update User", async({request})=>{
-
-    const response=await request.put('https://gorest.co.in/public/v2/users/'+userId,
-        {
-            data: {
-                "name": "Scott",
-                "gender": "female",
-                "email": "cs@gmail.com",
-                "status": "inactive"
-            },
-            headers: {
-                "Accept":"application/json",
-                "authorization": "Bearer "+authToken
-            }
-        }
-    );
-    console.log(await response.json())
+    }
+);
     expect(response.status()).toBe(200)
-    var res=await response.json()
-    expect(res.name).to.eq('scott-modifyName')
-    expect(res.gender).to.eq('female')
-    expect(res.status).to.eq('inactive')
-})
-
-test("Delete User", async({request})=>{
-    
-    const response=await request.delete('https://gorest.co.in/public/v2/users/'+userId,
-        {
-            headers: {
-                "Accept":"application/json",
-                "authorization": "Bearer "+authToken
-            } 
-        }
-    );
-    expect(response.status()).toBe(204)
+    console.log(await response.json()) 
 })
