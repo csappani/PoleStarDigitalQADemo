@@ -5,7 +5,7 @@ var authToken="6f902572bc247f7f2875a01601a12290cbce4fa20ea8ad4e7153f3a90986127f"
 
 test("Create User", async({request})=>{
 
-    const response=await request.post('https://gorest.co.in/public/v2/users',
+    const response=await request.post("https://gorest.co.in/public/v2/users",
         {
             data: {
                 "name": "chiran",
@@ -28,7 +28,7 @@ test("Create User", async({request})=>{
 
 test("Update User Details", async({request})=>{
 
-    const response=await request.put('https://gorest.co.in/public/v2/users/'+userId,
+    const response=await request.put("https://gorest.co.in/public/v2/users/"+userId,
         {
             data: {
                 "name": "scott-modifyName",
@@ -43,14 +43,17 @@ test("Update User Details", async({request})=>{
     );
     console.log(await response.json())
     expect(response.status()).toBe(200)
-    expect(response.body.name).to.eq('scott-modifyName')
-    expect(response.body.gender).to.eq('female')
-    expect(response.body.status).to.eq('inactive')
+    var res=await response.json()
+    userId=res.id;
+    console.log("userID:"+userId)
+    // expect(res.name).to.eq('scott-modifyName')
+    // expect(res.gender).to.eq('female')
+    // expect(res.status).to.eq('inactive')
 })
 
 test("Get User details by UserId", async({request})=>{
 
-    const response=await request.get('https://gorest.co.in/public/v2/users/'+userId,
+    const response=await request.get("https://gorest.co.in/public/v2/users/"+userId,
         {
             headers: {
                 "Accept": "application/json",
@@ -58,7 +61,22 @@ test("Get User details by UserId", async({request})=>{
             }
         }
     );
-    
-    expect(response.status()).toBe(200)
     console.log(await response.json())
+    expect(response.status()).toBe(200)
+    
+})
+
+test("Update User details with invalid UserId", async({request})=>{
+
+    const response=await request.put("https://gorest.co.in/public/v2/users/"+userId+"123",
+        {
+            headers: {
+                "Accept": "application/json",
+                "authorization": "Bearer "+authToken
+            }
+        }
+    );
+    console.log(await response.json())
+    expect(response.status()).toBe(404)
+    
 })

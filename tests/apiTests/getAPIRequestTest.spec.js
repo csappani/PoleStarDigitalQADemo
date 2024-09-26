@@ -63,14 +63,14 @@ test("Get Users with invalid authToken", async({request})=>{
     
 })
 
-test.skip("Create User", async({request})=>{
+test("Create User", async({request})=>{
 
     const response=await request.post('https://gorest.co.in/public/v2/users',
         {
             data: {
                 "name": "chiran",
                 "gender": "male",
-                "email": "csappani1@gmail.com",
+                "email": Math.random().toString(5).substring(2) + "@gmail.com",
                 "status": "active"
             },
             headers: {
@@ -86,13 +86,13 @@ test.skip("Create User", async({request})=>{
     console.log("userID:"+userId)
 })
 
-test.skip("Update User", async({request})=>{
+test("Update User", async({request})=>{
 
     const response=await request.put('https://gorest.co.in/public/v2/users/'+userId,
         {
             data: {
-                "name": "kumar",
-                "gender": "male",
+                "name": "Scott",
+                "gender": "female",
                 "email": "cs@gmail.com",
                 "status": "inactive"
             },
@@ -104,10 +104,13 @@ test.skip("Update User", async({request})=>{
     );
     console.log(await response.json())
     expect(response.status()).toBe(200)
-    
+    var res=await response.json()
+    expect(res.name).to.eq('scott-modifyName')
+    expect(res.gender).to.eq('female')
+    expect(res.status).to.eq('inactive')
 })
 
-test.skip("Delete User", async({request})=>{
+test("Delete User", async({request})=>{
     
     const response=await request.delete('https://gorest.co.in/public/v2/users/'+userId,
         {
