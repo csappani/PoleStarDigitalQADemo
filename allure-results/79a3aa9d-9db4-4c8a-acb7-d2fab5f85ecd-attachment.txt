@@ -1,0 +1,73 @@
+[
+  {
+    id: 7430721,
+    name: 'Ayushmati Gandhi',
+    email: 'ayushmati_gandhi@prosacco.test',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 7430720,
+    name: 'Jagmeet Ganaka',
+    email: 'jagmeet_ganaka@pfannerstill.example',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 7430719,
+    name: 'Anilaabh Bhattacharya',
+    email: 'anilaabh_bhattacharya@marvin.test',
+    gender: 'female',
+    status: 'inactive'
+  },
+  {
+    id: 7430718,
+    name: 'Amrita Deshpande',
+    email: 'amrita_deshpande@anderson.example',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7430717,
+    name: 'Ojaswini Tandon',
+    email: 'tandon_ojaswini@boehm-friesen.example',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7430716,
+    name: 'Gudakesa Menon',
+    email: 'menon_gudakesa@kohler.example',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 7430715,
+    name: 'Girja Malik',
+    email: 'girja_malik@monahan.example',
+    gender: 'female',
+    status: 'active'
+  },
+  {
+    id: 7430714,
+    name: 'Dharmaketu Gandhi',
+    email: 'gandhi_dharmaketu@hermiston-fay.example',
+    gender: 'female',
+    status: 'inactive'
+  },
+  {
+    id: 7430713,
+    name: 'Meghnad Sethi',
+    email: 'meghnad_sethi@halvorson.test',
+    gender: 'female',
+    status: 'inactive'
+  },
+  {
+    id: 7430712,
+    name: 'Chandrabhaga Ganaka',
+    email: 'ganaka_chandrabhaga@labadie.test',
+    gender: 'female',
+    status: 'inactive'
+  }
+]
+UserId:7430721

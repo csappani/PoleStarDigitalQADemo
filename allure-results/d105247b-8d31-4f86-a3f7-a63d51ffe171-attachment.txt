@@ -1,0 +1,7 @@
+{
+  id: 7430721,
+  name: 'Ayushmati Gandhi',
+  email: 'ayushmati_gandhi@prosacco.test',
+  gender: 'male',
+  status: 'inactive'
+}

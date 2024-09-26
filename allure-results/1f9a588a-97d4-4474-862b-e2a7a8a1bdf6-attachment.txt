@@ -1,8 +1,0 @@
-{
-  name: 'scott-modifyName',
-  gender: 'female',
-  status: 'inactive',
-  id: 7430342,
-  email: '32444132422303433020042@gmail.com'
-}
-userID:7430342

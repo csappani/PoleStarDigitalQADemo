@@ -1,7 +1,0 @@
-{
-  id: 7422295,
-  name: 'chiran',
-  email: '103400434101423410210233@gmail.com',
-  gender: 'male',
-  status: 'active'
-}
