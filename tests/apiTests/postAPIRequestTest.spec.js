@@ -1,3 +1,4 @@
+
 const {test, expect}=require('@playwright/test');
 
 var userId;
@@ -92,7 +93,6 @@ test("get user details By UserId", async({request})=>{
             }
         }
     );
-    
     expect(response.status()).toBe(200)
     console.log(await response.json())
 })

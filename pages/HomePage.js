@@ -5,6 +5,7 @@ exports.HomePage = class HomePage{
         this.polestar="//a[@class='css-uuqt7d']";
         this.acceptAll="//font[contains(text(),'Accept all')]";
         this.userAccountLink= 'svg[aria-label="avatar"]';
+        this.polish2 = "img[alt='Side bird's eye view of Polestar 2']";
     }
 
     async navigateHomePage(){
@@ -23,5 +24,14 @@ exports.HomePage = class HomePage{
         await this.page.locator(this.userAccountLink).click();
     }
 
+    async verifyPolish2Displayed(){
+        const polish2Element=await page.$$(this.polish2)
+        await expect(polish2Element).toBeVisible()
+    }
+
+    async verifyPolish3Displayed(){
+        const polish2Element=await page.$$(this.polish2)
+        await expect(polish2Element).toBeVisible()
+    }
 
 }
